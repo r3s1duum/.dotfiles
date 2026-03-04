@@ -34,6 +34,7 @@ cp $(pwd)/.zprofile ~/.zprofile
 
 echo "Copying .p10k.zsh..."
 cp $(pwd)/.p10k.zsh ~/.p10k.zsh
+
 ####################################################################
 # TMUX specific part
 ####################################################################
@@ -47,4 +48,7 @@ else
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
-zsh
+# Set syntax highlight
+zsh 
+fast-theme base16
+
