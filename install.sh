@@ -7,17 +7,17 @@
 check_zsh=$(which zsh)
 
 if [[ "$check_zsh" == *"zsh"* ]]; then
-    echo "ZSH is already installed."
+  echo "ZSH is already installed."
 else
-    echo "ZSH is not installed. Please install ZSH and rerun the script."
-    exit 1
+  echo "ZSH is not installed. Please install ZSH and rerun the script."
+  exit 1
 fi
 
 if [[ -d ~/.antidote ]]; then
-    echo "Antidote is already installed."
+  echo "Antidote is already installed."
 else
-    echo "Installing antidote..."
-    git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+  echo "Installing antidote..."
+  git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 fi
 
 echo "Copying .zsh_plugins.txt..."
@@ -42,13 +42,12 @@ echo "Copying tmux config..."
 cp $(pwd)/.tmux.conf ~/.tmux.conf
 
 if [[ -d ~/.tmux/plugins/tpm ]]; then
-    echo "Tmux Plugin Manager is already installed."
+  echo "Tmux Plugin Manager is already installed."
 else
-    echo "Installing Tmux Plugin Manager..."
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  echo "Installing Tmux Plugin Manager..."
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
 # Set syntax highlight
-zsh 
+zsh
 fast-theme base16
-
