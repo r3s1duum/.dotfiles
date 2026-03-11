@@ -18,24 +18,26 @@ HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=''
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=''
 
-alias la="ls -lA"
-alias ll="ls -l"
-
 autoload -Uz compinit && compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# MacOS/Homebrew specific
-# [[ $(uname -s) == "Darwin" ]] && export PATH=/opt/homebrew/bin:$PATH
 
 # ZSH keybinding
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
 
+###############################################################################
+# Aliases
+###############################################################################
+# Common Aliases
+alias la="ls -lA"
+alias ll="ls -l"
+
 # Git Aliases
 alias gs="git status"
 alias gc="git commit"
 alias gf="git fetch -p -a"
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
