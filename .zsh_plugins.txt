@@ -4,4 +4,7 @@ romkatv/powerlevel10k
 # Fish like plugins
 zsh-users/zsh-autosuggestions
 zdharma-continuum/fast-syntax-highlighting kind:defer
-zsh-users/zsh-history-substring-search
+
+# Vim mode
+jeffreytse/zsh-vi-mode
+

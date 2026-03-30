@@ -88,6 +88,17 @@ mkdir -p ~/.config/alacritty
 cp $(pwd)/alactritty.toml ~/.config/alacritty/alacritty.toml
 
 echo ""
+####################################################################
+# MacOS specific part
+####################################################################
+echo "####### MacOS specific #######"
+if [[ $(uname) == 'Darwin' ]]; then
+  echo "Copy KeyBindings..."
+  mkdir -p ~/Library/KeyBindings/
+  cp $(pwd)/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
+fi
+
+echo ""
 
 echo "***Finished!***"
 # Set syntax highlight
