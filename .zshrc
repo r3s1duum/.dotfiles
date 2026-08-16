@@ -9,20 +9,22 @@ fi
 ZVM_INIT_MODE=sourcing
 
 # source antidote
-source ~/.antidote/antidote.zsh
+source $(brew --prefix antidote)/share/antidote/antidote.zsh
 
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
-
 autoload -Uz compinit && compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ${ZDOTDIR}/.p10k.zsh ]] || source ${ZDOTDIR}/.p10k.zsh
 
 # ZSH keybinding
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
+
+# source fzf
+source <(fzf --zsh)
 
 ###############################################################################
 # Aliases
@@ -35,5 +37,3 @@ alias ll="ls -l"
 alias gs="git status"
 alias gc="git commit"
 alias gf="git fetch -p -a"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
