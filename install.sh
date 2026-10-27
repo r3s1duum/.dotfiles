@@ -15,7 +15,7 @@ echo ""
 ####################################################################
 echo "Overriding and sourcing .zshenv"
 echo "export ZDOTDIR=$SCRIPT_DIR" > ~/.zshenv
-echo "[[ -f $SCRIPT_DIR/.zshenv ]] && $SCRIPT_DIR/.zshenv" >> ~/.zshenv
+echo "[[ -f $SCRIPT_DIR/.zshenv ]] && source $SCRIPT_DIR/.zshenv" >> ~/.zshenv
 chmod +x ~/.zshenv && . ~/.zshenv
 
 echo ""
@@ -23,6 +23,9 @@ echo ""
 # TMUX specific part
 ####################################################################
 echo "####### tmux specific #######"
+echo "Install tpm"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 echo "Copying tmux config..."
 cp $(pwd)/.tmux.conf ~/.tmux.conf
 
