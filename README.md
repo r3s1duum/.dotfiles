@@ -12,8 +12,7 @@ Follow the order:
 
 ## Other links
 
-- [JetBrains Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono/NoLigatures/Regular)
+- [JetBrains Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/v3.5.1/patched-fonts/JetBrainsMono/NoLigatures/JetBrainsMonoNLNerdFont-Regular.ttf)
 - [Rose Pine for terminal.app](https://github.com/rose-pine/terminal.app)
-- [Rose Pine for Windows Terminal](https://github.com/rose-pine/windows-terminal)
-- [Alacritty](https://github.com/alacritty/alacritty/releases)
-- [Alactritty Icon](https://macosicons.com/u/michael_harding?icon=UcDQMJkqVL)
+- [Rose Pine for Konsole](https://github.com/rose-pine/konsole)
+
