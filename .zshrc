@@ -9,7 +9,7 @@ fi
 ZVM_INIT_MODE=sourcing
 
 # source antidote
-source ${ZDOTDIR:-HOME}/.antidote/antidote.zsh
+source ${ZDOTDIR}/.antidote/antidote.zsh
 
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
