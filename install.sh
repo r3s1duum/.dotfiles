@@ -1,5 +1,7 @@
 #!/bin/bash
 # set -x
+set -Eeuo pipefail
+
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 ####################################################################
 # Local functions
@@ -39,7 +41,7 @@ else
 fi
 
 echo "Linking tmux config..."
-link $(pwd)/tmux/tmux.conf ~/.config/tmux/tmux.conf
+link $SCRIPT_DIR/tmux/tmux.conf ~/.config/tmux/tmux.conf
 
 echo ""
 ####################################################################
@@ -47,13 +49,14 @@ echo ""
 ####################################################################
 echo "####### nvim specific #######"
 echo "Linking nvim config..."
-link $(pwd)/nvim/init.lua ~/.config/nvim/init.lua
+link $SCRIPT_DIR/nvim/init.lua ~/.config/nvim/init.lua
+
 echo ""
 ####################################################################
 # Antidote specific part
 ####################################################################
 echo "####### antidote specific #######"
-if [[ ! -d $(pwd)/.antidote ]]; then
+if [[ ! -d $SCRIPT_DIR/.antidote ]]; then
   git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
 else
   echo "Skipping, antidote already exists"
