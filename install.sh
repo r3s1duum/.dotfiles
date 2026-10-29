@@ -15,7 +15,7 @@ link() {
 # brew specific part
 ####################################################################
 echo "Install brew packages"
-brew install tmux neovim fzf fd ripgrep -y
+brew install tmux neovim fzf fd ripgrep lua-language-server -y
 # Check last status code
 [[ $? != 0 ]] && echo "Installation failure!" && exit 1
 
