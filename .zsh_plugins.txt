@@ -3,7 +3,7 @@ romkatv/powerlevel10k
 
 # Fish like plugins
 zsh-users/zsh-autosuggestions
-zdharma-continuum/fast-syntax-highlighting kind:defer
+zdharma-continuum/fast-syntax-highlighting kind:defer post:set_fast_theme
 
 # Vim mode
 jeffreytse/zsh-vi-mode

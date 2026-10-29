@@ -64,5 +64,3 @@ fi
 echo ""
 
 echo "***Finished!***"
-zsh # Install zsh plugins with antidote
-fast-theme base16 # Set syntax highlight

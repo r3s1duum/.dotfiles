@@ -11,6 +11,12 @@ ZVM_INIT_MODE=sourcing
 # source antidote
 source ${ZDOTDIR}/.antidote/antidote.zsh
 
+set_fast_theme() {
+  if [[ "$FAST_THEME_NAME" != base16 ]]; then
+    fast-theme -q base16
+  fi
+}
+
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
 autoload -Uz compinit && compinit
