@@ -23,10 +23,17 @@ echo ""
 ####################################################################
 # ZSH specific part
 ####################################################################
-echo "Overriding and sourcing .zshenv"
+echo "Configuring .zshenv"
+if [[ -f "$HOME/.zshenv" ]]; then
+  if [[ -e "$HOME/.zshenv.bak" ]]; then
+    echo "Cannot overwrite .zshenv: $HOME/.zshenv.bak already exists" >&2
+    exit 1
+  fi
+  cp "$HOME/.zshenv" "$HOME/.zshenv.bak"
+fi
 echo "export ZDOTDIR=\"$SCRIPT_DIR\"" > "$HOME/.zshenv"
 echo '[[ -f "$ZDOTDIR/.zshenv" ]] && source "$ZDOTDIR/.zshenv"' >> "$HOME/.zshenv"
-source "$HOME/.zshenv" # Source zshenv for later usage (antidote)
+source "$HOME/.zshenv"
 
 echo ""
 ####################################################################
