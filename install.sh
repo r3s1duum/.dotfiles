@@ -24,25 +24,25 @@ echo ""
 # ZSH specific part
 ####################################################################
 echo "Overriding and sourcing .zshenv"
-echo "export ZDOTDIR=$SCRIPT_DIR" > ~/.zshenv
-echo "[[ -f $SCRIPT_DIR/.zshenv ]] && source $SCRIPT_DIR/.zshenv" >> ~/.zshenv
-chmod +x ~/.zshenv && . ~/.zshenv
-source ~/.zshenv # Source zshenv for later usage (antidote)
+echo "export ZDOTDIR=\"$SCRIPT_DIR\"" > "$HOME/.zshenv"
+echo '[[ -f "$ZDOTDIR/.zshenv" ]] && source "$ZDOTDIR/.zshenv"' >> "$HOME/.zshenv"
+chmod +x "$HOME/.zshenv" && . "$HOME/.zshenv"
+source "$HOME/.zshenv" # Source zshenv for later usage (antidote)
 
 echo ""
 ####################################################################
 # TMUX specific part
 ####################################################################
 echo "####### tmux specific #######"
-if [[ ! -d ~/.config/tmux/plugins/tpm ]]; then
-  mkdir -p ~/.config/tmux/plugins
-  git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+if [[ ! -d "$HOME/.config/tmux/plugins/tpm" ]]; then
+  mkdir -p "$HOME/.config/tmux/plugins"
+  git clone https://github.com/tmux-plugins/tpm "$HOME/.config/tmux/plugins/tpm"
 else
   echo "Skipping, tpm already exists"
 fi
 
 echo "Linking tmux config..."
-link $SCRIPT_DIR/tmux/tmux.conf ~/.config/tmux/tmux.conf
+link "$SCRIPT_DIR/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
 
 echo ""
 ####################################################################
@@ -50,15 +50,15 @@ echo ""
 ####################################################################
 echo "####### nvim specific #######"
 echo "Linking nvim config..."
-link $SCRIPT_DIR/nvim/init.lua ~/.config/nvim/init.lua
+link "$SCRIPT_DIR/nvim/init.lua" "$HOME/.config/nvim/init.lua"
 
 echo ""
 ####################################################################
 # Antidote specific part
 ####################################################################
 echo "####### antidote specific #######"
-if [[ ! -d $SCRIPT_DIR/.antidote ]]; then
-  git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
+if [[ ! -d "$SCRIPT_DIR/.antidote" ]]; then
+  git clone --depth=1 https://github.com/mattmc3/antidote.git "${ZDOTDIR:-$HOME}/.antidote"
 else
   echo "Skipping, antidote already exists"
 fi
