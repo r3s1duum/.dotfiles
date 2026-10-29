@@ -36,6 +36,14 @@ vim.pack.add({
   "https://github.com/neovim/nvim-lspconfig",
 })
 
+require("nvim-treesitter").install({ "bash", "lua", "markdown", "markdown_inline", "zsh" })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "sh", "lua", "markdown", "zsh" },
+  callback = function(args)
+    pcall(vim.treesitter.start, args.buf)
+  end,
+})
+
 -- LSPs
 vim.lsp.enable({ "lua_ls" })
 

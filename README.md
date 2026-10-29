@@ -12,7 +12,7 @@ Follow the order:
 4. Clone this repository and run `./install.sh` from its root.
 5. Open a new Zsh terminal so Antidote loads the plugins and applies the syntax theme.
 6. Start `tmux`, then press `Ctrl-a` followed by uppercase `I` to install the tmux plugins with TPM.
-7. Open Neovim to install its configured packages. The config requires Neovim 0.12 or newer.
+7. Open Neovim to install its packages and Treesitter parsers; reopen files after the first parser install. The config requires Neovim 0.12 or newer.
 
 ## Other links
 
