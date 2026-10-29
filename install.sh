@@ -15,7 +15,7 @@ link() {
 # brew specific part
 ####################################################################
 echo "Install brew packages"
-brew install tmux neovim fzf tpm fd ripgrep -y
+brew install tmux neovim fzf fd ripgrep -y
 # Check last status code
 [[ $? != 0 ]] && echo "Installation failure!" && exit 1
 
@@ -34,8 +34,9 @@ echo ""
 # TMUX specific part
 ####################################################################
 echo "####### tmux specific #######"
-if [[ ! -d ~/.tmux/plugins/tpm ]]; then
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+if [[ ! -d ~/.config/tmux/plugins/tpm ]]; then
+  mkdir -p ~/.config/tmux/plugins
+  git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 else
   echo "Skipping, tpm already exists"
 fi
