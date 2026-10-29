@@ -7,6 +7,10 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 # Local functions
 ####################################################################
 link() {
+  if [[ -d "$2" && ! -L "$2" ]]; then
+    echo "Cannot link $2: destination is a directory" >&2
+    return 1
+  fi
   mkdir -p "$(dirname "$2")"
   ln -sfn "$1" "$2"
   echo "Linked $2 -> $1"
