@@ -26,7 +26,6 @@ echo ""
 echo "Overriding and sourcing .zshenv"
 echo "export ZDOTDIR=\"$SCRIPT_DIR\"" > "$HOME/.zshenv"
 echo '[[ -f "$ZDOTDIR/.zshenv" ]] && source "$ZDOTDIR/.zshenv"' >> "$HOME/.zshenv"
-chmod +x "$HOME/.zshenv" && . "$HOME/.zshenv"
 source "$HOME/.zshenv" # Source zshenv for later usage (antidote)
 
 echo ""
