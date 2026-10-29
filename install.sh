@@ -21,6 +21,16 @@ brew install tmux neovim fzf fd ripgrep -y
 
 echo ""
 ####################################################################
+# Antidote specific part
+####################################################################
+echo "####### antidote specific #######"
+if [[ ! -d "$SCRIPT_DIR/.antidote" ]]; then
+  git clone --depth=1 https://github.com/mattmc3/antidote.git "$SCRIPT_DIR/.antidote"
+else
+  echo "Skipping, antidote already exists"
+fi
+echo ""
+####################################################################
 # ZSH specific part
 ####################################################################
 echo "Configuring .zshenv"
@@ -57,17 +67,5 @@ echo ""
 echo "####### nvim specific #######"
 echo "Linking nvim config..."
 link "$SCRIPT_DIR/nvim/init.lua" "$HOME/.config/nvim/init.lua"
-
-echo ""
-####################################################################
-# Antidote specific part
-####################################################################
-echo "####### antidote specific #######"
-if [[ ! -d "$SCRIPT_DIR/.antidote" ]]; then
-  git clone --depth=1 https://github.com/mattmc3/antidote.git "${ZDOTDIR:-$HOME}/.antidote"
-else
-  echo "Skipping, antidote already exists"
-fi
-echo ""
 
 echo "***Finished!***"
