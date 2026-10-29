@@ -19,7 +19,6 @@ vim.opt.timeoutlen = 500
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.undofile = true
-vim.opt.swapfile = false
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.cursorline = true
