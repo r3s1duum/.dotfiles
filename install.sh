@@ -37,10 +37,12 @@ echo ""
 ####################################################################
 # ZSH specific part
 ####################################################################
+echo "####### tmux specific #######"
 echo "Configuring .zshenv"
 if [[ -f "$HOME/.zshenv" ]]; then
-  if [[ -e "$HOME/.zshenv.bak" ]]; then
+  if [[ -e "$HOME/.zshenv.bak" && "${1:-}" != "-f" ]]; then
     echo "Cannot overwrite .zshenv: $HOME/.zshenv.bak already exists" >&2
+    echo "Use 'install.sh -f' to override"
     exit 1
   fi
   cp "$HOME/.zshenv" "$HOME/.zshenv.bak"
@@ -72,4 +74,5 @@ echo "####### nvim specific #######"
 echo "Linking nvim config..."
 link "$SCRIPT_DIR/nvim/init.lua" "$HOME/.config/nvim/init.lua"
 
+echo ""
 echo "***Finished!***"
