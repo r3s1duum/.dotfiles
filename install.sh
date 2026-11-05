@@ -75,4 +75,13 @@ echo "Linking nvim config..."
 link "$SCRIPT_DIR/nvim/init.lua" "$HOME/.config/nvim/init.lua"
 
 echo ""
+####################################################################
+# LazyGit specific part
+####################################################################
+echo "####### lazygit specific #######"
+echo "Linking lazygit config..."
+link "$SCRIPT_DIR/lazygit/config.yml" "$HOME/.config/lazygit/config.yml"
+
+echo ""
+####################################################################
 echo "***Finished!***"
