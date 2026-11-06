@@ -76,6 +76,14 @@ link "$SCRIPT_DIR/nvim/init.lua" "$HOME/.config/nvim/init.lua"
 
 echo ""
 ####################################################################
+# git specific part
+####################################################################
+echo "####### git specific #######"
+echo "Linking git config..."
+link "$SCRIPT_DIR/git/config" "$HOME/.config/git/config"
+
+echo ""
+####################################################################
 # LazyGit specific part
 ####################################################################
 echo "####### lazygit specific #######"
