@@ -37,7 +37,7 @@ echo ""
 ####################################################################
 # ZSH specific part
 ####################################################################
-echo "####### tmux specific #######"
+echo "####### zsh specific #######"
 echo "Configuring .zshenv"
 if [[ -f "$HOME/.zshenv" ]]; then
   if [[ -e "$HOME/.zshenv.bak" && "${1:-}" != "-f" ]]; then
