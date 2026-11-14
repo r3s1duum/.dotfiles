@@ -37,7 +37,11 @@ bindkey  "^[[3~"  delete-char
 # source fzf
 source <(fzf --zsh)
 
+# History related settings because of tmux and my workflow
 HISTFILE="$ZDOTDIR/.zsh_history"
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
 
 ###############################################################################
 # Aliases
